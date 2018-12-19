@@ -72,6 +72,7 @@ class Auth extends Component {
       const email = this.state.email;
       const password = this.state.password;
       this.props.signInEmail(email, password);
+       
     } else {
       this.validatorLogin.showMessages();
       // rerender to show messages for the first time
@@ -98,6 +99,7 @@ class Auth extends Component {
     return (
       <div className={"loginPage " + (this.state.isLogin ? 'is-login' : '')}>
 
+
         <img className="logo" alt="logo drinkshot" src={logo} />
 
         <Panel className="loginCard">
@@ -113,7 +115,7 @@ class Auth extends Component {
 
 
             </div>
-            <p className="error-message"> {this.validatorLogin.message('email', this.state.email, 'required|email')}</p>
+            <div className="error-message"> {this.validatorLogin.message('email', this.state.email, 'required|email')}</div>
             <div className="form-group">
 
 
@@ -124,7 +126,7 @@ class Auth extends Component {
                 value={this.state.password} onChange={this.setPassword} />
 
             </div>
-            <p className="error-message"> {this.validatorLogin.message('password', this.state.password, 'required|min:6|max:20')}</p>
+            <div className="error-message"> {this.validatorLogin.message('password', this.state.password, 'required|min:6|max:20')}</div>
 
             <Button color="primary"
               type="submit"
@@ -155,7 +157,7 @@ class Auth extends Component {
                   placeholder="Email address"
                   value={this.state.registerEmail} onChange={this.setRegisterEmail} />
 
-                <p className="error-message"> {this.validatorRegister.message('email', this.state.registerEmail, 'required|min:5|max:120')}</p>
+                <div className="error-message"> {this.validatorRegister.message('email', this.state.registerEmail, 'required|min:5|max:120')}</div>
 
               </div>
               <div className="form-group">
@@ -165,7 +167,7 @@ class Auth extends Component {
                   className="form-control"
                   placeholder="Password"
                   value={this.state.registerPassword} onChange={this.setRegisterPassword} />
-                <p className="error-message"> {this.validatorRegister.message('email', this.state.registerPassword, 'required|min:5|max:120')}</p>
+                <div className="error-message"> {this.validatorRegister.message('email', this.state.registerPassword, 'required|min:5|max:120')}</div>
               </div>
 
 

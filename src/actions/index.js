@@ -1,6 +1,5 @@
 import {  authRef, db, provider } from "../config/firebase";
 
-
 const FETCH_USER = "FETCH_USER";
 
 export const fetchUser = () => dispatch => {
@@ -20,14 +19,22 @@ export const fetchUser = () => dispatch => {
 };
 ///////////////////////// AUTHENTIFICATION
 
-export const signInEmail = (email, password) => dispatch => {
+export const signInEmail = (email, password ) => dispatch => {
   authRef
     .signInWithEmailAndPassword(email, password)
     .then(result => { })
     .catch(error => {
-      console.log(error);
+alert(error.message)
+
+
     });
 };
+
+export const errorData = error =>{
+return error || null;
+}
+
+
 
 export const signInGoogle = () => dispatch => {
   authRef
@@ -36,7 +43,7 @@ export const signInGoogle = () => dispatch => {
       createNewUser(authRef.currentUser.uid);
     })
     .catch(error => {
-      console.log(error);
+      alert(error.message)
     });
 };
 
@@ -47,7 +54,7 @@ export const signOut = () => dispatch => {
       // Sign-out successful.
     })
     .catch(error => {
-      console.log(error);
+      alert(error.message)
     });
 };
 
@@ -59,7 +66,7 @@ export const signUp = (email, password) => dispatch => {
       createNewUser(authRef.currentUser.uid);
     })
     .catch(error => {
-      console.log(error);
+      alert(error.message)
     });
 };
 
@@ -115,7 +122,6 @@ export const editDrink = (id, name, type, othertype, comments, photoUrl ) => dis
     }
   );
 };
-
 
 
 
