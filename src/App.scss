@@ -1,0 +1,633 @@
+
+/** VARIABLES **/
+$primaryColor : #80CBC4;
+$darkPrimaryColor :#00695C;
+
+$secondaryColor : #E6EE9C;
+$darkSecondaryColor : #C0CA33;
+
+.material-icons.darkPrimaryColor{
+    color:$darkPrimaryColor !important;
+}
+.material-icons.white{
+    color:#fff !important;
+}
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/materialicons/v41/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+  .mat-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+}
+.material-icons.md-36 {
+    font-size: 36px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+}
+.mui-panel h3{
+    margin-top:6px;
+}
+.mui-btn--accent{
+    background-color: $secondaryColor !important;
+    color:rgba(0,0,0,.87) !important;
+}
+.mui-btn--primary{
+    background-color: $primaryColor !important;
+    color:rgba(0,0,0,.87) !important;
+}
+.mat-raised-button.mat-warn:hover{
+    background-color: #f44336;
+    color: #fff;
+}
+.mat-fab.mat-warn, .mat-flat-button.mat-warn, .mat-mini-fab.mat-warn, .mat-raised-button.mat-warn {
+    color: #fff;
+    background-color: #f44336;
+}
+/** GENERIC STYLES **/
+
+*{
+    font-family: 'Raleway', sans-serif ;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+body{
+    height: 100%;
+}
+mat-form-field {
+width: 100%;
+}
+h3{
+    color:$darkPrimaryColor;
+    margin-bottom: 1rem !important;
+}
+button{
+    box-shadow: none !important;
+    height:42px;
+    
+}
+
+.mat-primary{
+    &[disabled]{
+        background-color: $primaryColor !important;
+        opacity: 0.5;
+        color: #fff !important;
+    }
+}
+.mat-raised-button{
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+}
+.mat-button-wrapper{
+    display: flex;
+    align-items: center;
+}
+.wrapperTwoButtons{
+    display: flex;
+    justify-content: space-between;
+    margin-top:1rem; 
+    a{
+        flex: 1;
+        margin-left: .5rem;
+
+        &:first-child{
+            margin:0 .5rem 0 0;
+        }
+        button{width:100%}
+    }
+}
+.cardContainer{
+    margin-bottom:60px !important;
+    margin-top:55px !important;
+
+    &.edit{
+        margin-top:60px !important;
+    }
+}
+/*** CROP IMAGE **/
+
+#canvas canvas{
+    width:100%;
+}
+.cropContainer{
+    width: 100%;
+    padding-bottom: 100%;
+    overflow:hidden;
+
+    img{
+        position: absolute;
+    }
+}
+
+/** HEADER **/
+
+header{
+    height: 50px;
+    background:url("assets/drinkshot-logo-typo.png") no-repeat center center #fff;
+    background-size: 120px;
+    position: relative;
+    margin: 0;
+    width:100%;
+    position:fixed;
+    top:0;
+    z-index: 10;
+    box-shadow: 0 2px 6px 1px rgba(0,0,0,0.1);
+
+
+    .iconDisconnect{
+        position: absolute;
+        right:.5rem;
+        top:.5rem;
+        color:$primaryColor !important;
+    }
+    .iconBack{
+        position: absolute;
+        left:.5rem;
+        top:.5rem;
+        color:$primaryColor !important;
+    }
+}
+
+/** LOGIN PAGE **/
+.loginPage{
+    padding: 1rem;
+    background: url("assets/bg-login.jpg") no-repeat;
+    background-size: cover;
+    height: 130vh;
+
+    button{
+        width:100%;
+        font-weight: 600;
+        text-transform: uppercase;
+   
+    }
+    .logo{
+        display: block;
+        margin: .5rem auto 1.5rem auto;
+        width: 130px;
+    }
+    .createAccount_text{
+        text-align: center;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+    .createAccount_bt{
+        background: $darkPrimaryColor !important;
+        color: #fff !important;
+        margin-top: 0;
+    }
+}
+.error-message{
+    color: red;
+    font-size: .8rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+.loginGoogle_bt{
+    display: block;
+    background: url("assets/btn_google_signin_light_normal_web@2x.png") no-repeat;
+    background-size: contain;
+    width: 191px;
+    height: 46px;
+    cursor: pointer;
+    margin: 1rem auto 0 auto;
+
+    &:hover{
+        background: url("assets/btn_google_signin_light_pressed_web@2x.png") no-repeat;
+        background-size: contain;
+        
+    }
+}
+.backToLogin{
+    font-weight: 600;
+    color:$darkPrimaryColor;
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: .5rem;
+    font-size: 1rem;
+}
+.loginCard, .createAccount{
+    display: none !important;
+}
+.is-login{
+    .loginCard, .createAccount{
+        display: block !important;
+    }
+    .registerCard{
+        display: none;
+    }
+}
+
+/** NAVBAR **/
+.navbar{
+    background:$darkPrimaryColor;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+    margin:0;
+    padding:.5rem 0 .3rem 0;
+    box-shadow:1px -3px 4px 0px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-around;
+
+    .mat-icon{
+        height: 32px !important;
+        width: 32px !important;
+        font-size: 32px !important;
+        color:white !important;
+
+        .active &{
+            color:$primaryColor !important;
+        }
+    }
+
+
+    .addDrink_byPhoto, .addDrink_byFile{
+        padding:0;
+        margin:0;
+        background: none !important;
+        label{
+            display: flex;
+            align-items: center;
+        }
+        input{
+            display:none;
+        }
+        
+    }
+   
+}
+
+/**** DASHBOARD **/
+body .mui-textfield>label{
+    font-size: .8rem;
+    color: #80cbc4;
+    font-weight: 500;
+    position: absolute;
+    top: 0px; 
+}
+
+.seeDrinks_bt{
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $darkPrimaryColor;
+    padding: .6rem 0;
+    text-transform: uppercase;
+    margin: 3rem auto;
+    max-width: 35rem;
+    border-radius: 4px;
+
+    &:active{
+        background: #088878;
+    }
+
+    img{
+        width:30px;
+        margin-right: 1rem; 
+    }
+}
+
+/** DRINK LIST **/
+.drinkList{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0.5%;
+    margin-top:0;
+}
+.drinkList a {
+    width: 32%;
+    overflow: hidden;
+    padding-bottom: 32%;
+    margin: 0.66%;
+    overflow: hidden;
+    background-size: cover;
+    background-color: #fff;
+    background-position: center;
+}
+.emptyList{
+    font-weight: 600;
+    margin: 1rem;
+    margin-top: 5rem;
+    text-align: center;
+    color: $darkPrimaryColor;
+}
+
+/** SINGLE DRINK **/
+.singleDrink{
+    background: #fff;
+    img{
+        max-width: 100%;
+    }
+}
+
+.singleDrink_infos{
+    padding: .6rem 1rem;
+    position:relative;
+
+    h2{
+        font-size: 1.4rem;
+        font-weight: 400;
+        color:$darkPrimaryColor;
+        margin:0;
+        text-transform: uppercase;
+        padding-right: 1rem;
+    }
+    .singleDrink_type{
+        font-size: 1.2rem;
+        color:$primaryColor;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+    .singleDrink_date{
+        font-size: 1rem;
+        color:$primaryColor;
+        font-weight: 400;
+        font-style: italic;
+    }
+    .singleDrink_comments{
+        margin:.5rem 0 0 0;
+        color:$darkPrimaryColor;
+        line-height: 1.3rem;
+    }
+    .singleDrink_edit{
+        color:$primaryColor;
+        position:absolute;
+        top:.7rem;
+        right:.7rem;
+        .icon{
+            height: 28px !important;
+            font-size: 28px !important;
+            width: 28px !important;
+        }
+    }
+
+}
+.singleDrink_imgContainer{
+    width: 100%;
+
+}
+
+/** EDIT DRINK **/
+.editCard{
+    margin : 1rem;
+}
+.addDrink{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addDrinkZone{
+    background: #ecf5f4;
+    padding:.7rem;
+    border-radius: 5px;
+}
+.addDrink_title{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    margin: 0 1rem 2rem 0;
+}
+.addDrink_byPhoto, .addDrink_byFile{
+    background: #fff;
+    padding:.5rem;
+    flex:1;
+    margin:0 .4rem 0 0;
+    max-width: 15rem;;
+    border-radius: 4px;
+    p{
+        color:$darkPrimaryColor;
+        text-transform: uppercase;
+        font-size: 12px;
+        text-align: center;
+        font-weight: 700;
+        margin: 0;
+    }
+    label{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    input{
+        display:none;
+    }
+    .icon{
+        width:40px;
+        height:40px;
+        font-size: 40px;
+        color:$darkPrimaryColor;
+        display: block;
+        margin:0 auto;
+    }
+    &:active{
+        background:#9ce2dc;
+    }
+}
+.addDrink_byFile{
+    margin:0 0 0 .4rem ;
+    &:active{
+        background:#f7fdc0;
+    }
+}
+.editImgContainer{
+    position: relative;
+}
+.imgContainer{
+
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    position: relative;
+   
+    img{
+        // max-width: 100%;
+        max-height: 130px;
+    }
+    .uploadProgress{
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .percentageValue{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 46px;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+    }
+    mat-spinner{
+        zoom:0.8;
+        margin:20px auto 0 auto,
+    }
+}
+.deleteBt{
+    display: block !important;
+    margin: 1rem auto 0 auto !important;
+}
+.uploadProgress {
+    position: absolute;
+    top: 2.5rem;
+    left: 10%;
+    right: 10%;
+
+    .mat-spinner{
+        margin-left : calc(50% - 50px);
+    }
+    .percentageValue{
+        top: 42px;
+        text-align: center;
+        color: #fff;
+        font-weight: 600;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}
+.imageToModify{
+    max-width: 120px;
+    margin: 1rem auto 0 auto;
+    display:block;
+    position: relative;
+
+    &.newImage{
+        background-position-x: 50%;
+        background-position-y: 50%;
+    }
+}
+
+/** ADD DRINK **/
+
+.addCard{
+    margin: 1rem;
+}
+.addDrink_bt{
+    padding: 0 2rem !important;
+    display: block !important;
+    margin: 1rem auto 0 auto !important;
+}
+.imageToAdd{
+    width:80%;
+    padding-bottom: 80%;
+    margin:0 auto;
+    background-size: cover;
+    position: relative;
+}
+.direction{
+    position: absolute;
+    width:0;
+    height:0;
+
+    &.is-left{
+        left:-.5rem;
+        top: calc(50% - 24px);
+    }
+    &.is-right{
+        right:2.5rem;
+        top: calc(50% - 24px);
+    }
+    &.is-up{
+        top:-.5rem;
+        left: calc(50% - 24px);
+    }
+    &.is-down{
+        bottom:2.5rem;
+        left: calc(50% - 24px);
+    }
+}
+.imgUploadZone{
+    text-align: center;
+    position: relative;
+    
+
+    .percentageValue{
+        font-weight: 600;
+        color: $darkPrimaryColor;
+    }
+
+
+    img{
+        max-width: 120px;
+    }
+
+}
+.textUploading{
+font-style: italic;
+color:$darkPrimaryColor;
+}
+.loadingContent{
+    text-align: center;
+}
+.loader {
+    height: 4px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #ececec;
+    margin-bottom: 1rem;
+  }
+  .loader:before{
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: $primaryColor;
+    animation: loading 2s linear infinite;
+  }
+  
+  @keyframes loading {
+      from {left: -200px; width: 30%;}
+      50% {width: 30%;}
+      70% {width: 70%;}
+      80% { left: 50%;}
+      95% {left: 120%;}
+      to {left: 100%;}
+  }
+
+
+
+
+
+
+
